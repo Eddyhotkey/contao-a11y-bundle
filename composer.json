@@ -1,0 +1,64 @@
+{
+  "name": "weba11y/contao-a11y-bundle",
+  "description": "Accessibility tools and helpers for Contao",
+  "license": "LGPL-3.0-or-later",
+  "type": "contao-bundle",
+  "authors": [
+    {
+      "name": "Rashid Bairamov",
+      "homepage": "https://weba11y.de"
+    }
+  ],
+  "homepage": "https://weba11y.de",
+  "support": {
+    "issues": "https://github.com/weba11y/contao-a11y-bundle/issues",
+    "source": "https://github.com/weba11y/contao-a11y-bundle"
+  },
+  "require": {
+    "php": "^8.1",
+    "contao/core-bundle": "^5.3"
+  },
+  "require-dev": {
+    "bamarni/composer-bin-plugin": "^1.5",
+    "contao/manager-plugin": "^2.0",
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^6.1"
+  },
+  "conflict": {
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Weba11y\\ContaoA11yBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Weba11y\\ContaoA11yBundle\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true,
+      "contao-components/installer": true,
+      "contao/manager-plugin": true
+    }
+  },
+  "extra": {
+    "bamarni-bin": {
+      "bin-links": false,
+      "target-directory": "tools"
+    },
+    "contao-manager-plugin": "Weba11y\\ContaoA11yBundle\\ContaoManager\\Plugin"
+  },
+  "scripts": {
+    "all": [
+      "@unit-tests",
+      "@ecs",
+      "@phpstan"
+    ],
+    "ecs": "@php tools/ecs/vendor/bin/ecs check src tests --config ecs.php --fix --ansi",
+    "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze --ansi",
+    "unit-tests": "@php vendor/bin/phpunit --colors=always"
+  }
+}
