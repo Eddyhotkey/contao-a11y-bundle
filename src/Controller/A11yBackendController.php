@@ -18,13 +18,12 @@
         public function __invoke(): Response
         {
             return $this->render(
-                '@Contao/weba11y_a11y_backend.html.twig',
+                '@ContaoA11y/weba11y_a11y_backend.html.twig',
                 [
                     'title'     => 'WebA11y Tools',
                     'headline'  => 'WebA11y – Accessibility Tools',
                     'introText' => 'Hier kommen später deine Accessibility-Werkzeuge rein.',
                 ]
             );
-            
         }
     }
