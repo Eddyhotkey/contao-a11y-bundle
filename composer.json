@@ -45,6 +45,11 @@
     }
   },
   "extra": {
+    "contao": {
+      "resources": {
+        "templates": "templates"
+      }
+    },
     "bamarni-bin": {
       "bin-links": false,
       "target-directory": "tools"
