@@ -17,7 +17,6 @@
     {
         public function __invoke(): Response
         {
-            // Hier kannst du später Daten sammeln und an das Template übergeben
             return $this->render(
                 'weba11y_a11y_backend.html.twig',
                 [
