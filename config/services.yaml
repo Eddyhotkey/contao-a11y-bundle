@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Weba11y\ContaoA11yBundle\:
+    resource: '../src'
+    exclude: '../src/{ContaoManager,DependencyInjection,ContaoA11yBundle.php}'
